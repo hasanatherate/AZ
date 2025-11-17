@@ -50,31 +50,37 @@
     }
     
     .header-content {
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
     }
     
+    /* Hide desktop contact info on mobile */
     .header-contact {
-        gap: 1rem;
+        display: none;
     }
     
-    .contact-item {
-        font-size: 0.8rem;
-    }
-    
+    /* Hide main desktop navigation on mobile */
     .main-nav {
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.5rem 0;
+        display: none !important;
     }
     
-    .nav-link {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    
+    /* Show mobile toggle button */
     .mobile-toggle {
         display: flex;
+    }
+    
+    /* Show mobile sidebar overlay and sidebar */
+    .mobile-sidebar-overlay {
+        display: block;
+    }
+    
+    .mobile-sidebar {
+        display: block;
+    }
+    
+    /* Adjust dropdown menus to not display */
+    .dropdown-menu {
+        display: none !important;
     }
     
     .hero {

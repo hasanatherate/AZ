@@ -86,18 +86,211 @@
     color: white;
 }
 
+/* Mobile Toggle Button */
 .mobile-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 3px;
+    gap: 4px;
+    padding: 8px;
+    z-index: 1001;
+    position: relative;
 }
 
 .mobile-toggle span {
     width: 25px;
     height: 3px;
     background: white;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Mobile Toggle Animation */
+.mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Sidebar Overlay */
+.mobile-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-sidebar-overlay.active {
+    opacity: 1;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.95), rgba(0, 40, 80, 0.95));
+    backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+/* Mobile Sidebar Header */
+.mobile-sidebar-header {
+    padding: 2rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-sidebar-header .logo-image {
+    width: 40px;
+    height: 40px;
+}
+
+.mobile-sidebar-header .logo-text h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: white;
+}
+
+.mobile-sidebar-header .header-flags {
+    margin-top: 0.5rem;
+}
+
+/* Mobile Sidebar Navigation */
+.mobile-sidebar-nav {
+    padding: 1rem 0;
+}
+
+.mobile-nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding-left: 2rem;
+}
+
+.mobile-nav-link i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    transition: max-height 0.3s ease;
+}
+
+.mobile-dropdown.active {
+    max-height: 500px;
+}
+
+.mobile-dropdown.active .mobile-nav-link i {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown-section {
+    padding: 0.5rem 0;
+}
+
+.mobile-dropdown-title {
+    padding: 0.8rem 2rem;
+    color: #5CE1E6;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(92, 225, 230, 0.2);
+}
+
+.mobile-dropdown-item {
+    padding: 0.7rem 2.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.mobile-dropdown-item:hover {
+    background: rgba(92, 225, 230, 0.1);
+    color: #5CE1E6;
+    border-left-color: #5CE1E6;
+    padding-left: 3rem;
+}
+
+/* Mobile Contact Info */
+.mobile-contact-info {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.mobile-contact-item i {
+    color: #5CE1E6;
+    width: 20px;
+    text-align: center;
+}
+
+.mobile-contact-item a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mobile-contact-item a:hover {
+    color: #5CE1E6;
 }
 
 .main-nav {

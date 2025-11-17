@@ -375,19 +375,69 @@ class AgenciesSlider {
 // ===== MOBILE NAVIGATION =====
 class MobileNavigation {
     constructor() {
-        this.mobileMenu = document.getElementById('mobile-menu');
-        this.navMenu = document.getElementById('main-nav');
+        this.mobileToggle = document.getElementById('mobile-toggle');
+        this.mobileSidebar = document.getElementById('mobile-sidebar');
+        this.mobileOverlay = document.getElementById('mobile-sidebar-overlay');
+        this.dropdownTriggers = document.querySelectorAll('.mobile-dropdown-trigger');
         
-        if (this.mobileMenu && this.navMenu) {
+        if (this.mobileToggle && this.mobileSidebar) {
             this.init();
         }
     }
 
     init() {
-        this.mobileMenu.addEventListener('click', () => {
-            this.navMenu.classList.toggle('active');
-            this.mobileMenu.classList.toggle('active');
+        // Toggle sidebar
+        this.mobileToggle.addEventListener('click', () => {
+            this.toggleSidebar();
         });
+
+        // Close sidebar when clicking overlay
+        this.mobileOverlay.addEventListener('click', () => {
+            this.closeSidebar();
+        });
+
+        // Handle dropdown menus in sidebar
+        this.dropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdownId = 'mobile-' + trigger.dataset.dropdown;
+                const dropdown = document.getElementById(dropdownId);
+                
+                if (dropdown) {
+                    // Close other dropdowns
+                    document.querySelectorAll('.mobile-dropdown').forEach(d => {
+                        if (d !== dropdown) {
+                            d.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close sidebar when clicking internal links
+        const sidebarLinks = this.mobileSidebar.querySelectorAll('a:not(.mobile-dropdown-trigger)');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                this.closeSidebar();
+            });
+        });
+    }
+
+    toggleSidebar() {
+        this.mobileSidebar.classList.toggle('active');
+        this.mobileOverlay.classList.toggle('active');
+        this.mobileToggle.classList.toggle('active');
+        document.body.style.overflow = this.mobileSidebar.classList.contains('active') ? 'hidden' : '';
+    }
+
+    closeSidebar() {
+        this.mobileSidebar.classList.remove('active');
+        this.mobileOverlay.classList.remove('active');
+        this.mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
     }
 }
 
