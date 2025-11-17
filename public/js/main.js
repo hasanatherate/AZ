@@ -93,19 +93,21 @@ class PopupManager {
     }
 
     hijackConsultationButtons() {
-        // Select all buttons and links that should trigger popup
-        const allButtons = document.querySelectorAll('a.btn, button.btn, .popup-trigger');
+        // Select all buttons and links that should trigger popup (exclude form submit buttons)
+        const allButtons = document.querySelectorAll('a.btn, .popup-trigger');
         
         allButtons.forEach(button => {
             const buttonText = button.textContent.toLowerCase();
             
             // Check if button should trigger popup instead of normal action
-            if (buttonText.includes('get started') || 
-                buttonText.includes('consultation') || 
+            // Exclude form submit buttons by checking if it's actually a submit button
+            if ((buttonText.includes('get started') || 
                 buttonText.includes('contact us today') ||
                 buttonText.includes('start your service') ||
                 buttonText.includes('book a free consultation') ||
-                button.classList.contains('popup-trigger')) {
+                button.classList.contains('popup-trigger')) &&
+                button.tagName.toLowerCase() !== 'button' &&
+                button.getAttribute('type') !== 'submit') {
                 
                 // Remove any existing href to prevent navigation
                 if (button.getAttribute('href')) {
@@ -306,6 +308,17 @@ class FormValidator {
             e.preventDefault();
             return false;
         }
+        
+        // If validation passes, form will submit normally to FormSubmit
+        // Add loading state to submit button
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+        }
+        
+        // Form will redirect to FormSubmit automatically
+        return true;
     }
 }
 
