@@ -30,13 +30,15 @@
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr minmax(300px, 400px);
     gap: 4rem;
     align-items: center;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    padding: 0 20px;
 }
 
 .hero-text {
@@ -87,11 +89,13 @@
 
 .business-hero .hero-content {
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 1fr minmax(300px, 400px);
     gap: 4rem;
     align-items: center;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .business-hero .hero-text {
