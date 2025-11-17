@@ -19,7 +19,7 @@
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>Email</h4>
-                        <p>marco.lye@allzonecorp.com</p>
+                        <p>marcolyester@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -42,7 +42,7 @@
             
             <div class="contact-form">
                 <h3>Send a Message</h3>
-                <form action="https://formsubmit.co/marco.lye@allzonecorp.com" method="POST">
+                <form action="https://formsubmit.co/marcolyester@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="New Contact - All Zone Corporate">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -51,20 +51,24 @@
                         <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+                        <input type="email" name="email" placeholder="Your Email" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" required>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Your Phone" autocomplete="tel">
+                    <div class="form-group phone-input-group">
+                        <div class="country-selector">
+                            <select class="country-code" name="country_code" required>
+                                <option value="+91" data-flag="🇮🇳" selected>🇮🇳 +91</option>
+                                <option value="+971" data-flag="🇦🇪">🇦🇪 +971</option>
+                            </select>
+                        </div>
+                        <input type="tel" name="phone" placeholder="Your Phone Number" autocomplete="tel" pattern="[0-9]{9,10}" title="Please enter 10 digits for India (+91) or 9 digits for UAE (+971)" required>
                     </div>
                     <div class="form-group">
                         <select name="interest" required>
                             <option value="">I'm interested in...</option>
-                            <option value="buy">Buying Property</option>
-                            <option value="rent">Renting Property</option>
-                            <option value="lease">Leasing Property</option>
                             <option value="business-setup">Business Setup</option>
                             <option value="accounting">Accounting & Tax</option>
                             <option value="consultation">Free Consultation</option>
+                            <option value="real-estate">Real Estate</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -143,20 +147,24 @@
                 <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
             </div>
             <div class="form-group">
-                <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+                <input type="email" name="email" placeholder="Your Email" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" required>
             </div>
-            <div class="form-group">
-                <input type="tel" name="phone" placeholder="Your Phone" autocomplete="tel">
+            <div class="form-group phone-input-group">
+                <div class="country-selector">
+                    <select class="country-code" name="country_code" required>
+                        <option value="+91" data-flag="🇮🇳" selected>🇮🇳 +91</option>
+                        <option value="+971" data-flag="🇦🇪">🇦🇪 +971</option>
+                    </select>
+                </div>
+                <input type="tel" name="phone" placeholder="Your Phone Number" autocomplete="tel" pattern="[0-9]{9,10}" title="Please enter 10 digits for India (+91) or 9 digits for UAE (+971)" required>
             </div>
             <div class="form-group">
                 <select name="interest" required>
                     <option value="">I'm interested in...</option>
-                    <option value="buy">Buying Property</option>
-                    <option value="rent">Renting Property</option>
-                    <option value="lease">Leasing Property</option>
                     <option value="business-setup">Business Setup</option>
                     <option value="accounting">Accounting & Tax</option>
                     <option value="consultation">Free Consultation</option>
+                    <option value="real-estate">Real Estate</option>
                 </select>
             </div>
             <div class="form-group">
@@ -181,5 +189,6 @@
 </div>
 <% } %>
 
-</body>
-</html>
+<!-- JavaScript -->
+<script src="/js/main.js"></script>
+

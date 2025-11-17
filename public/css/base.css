@@ -1,0 +1,45 @@
+/* ========================================
+   BASE STYLES & VARIABLES
+   ======================================== */
+
+:root {
+    --primary-gradient: linear-gradient(to right, #5CE1E6, #0074FF);
+    --hero-overlay: linear-gradient(135deg, rgba(0, 20, 40, 0.4), rgba(0, 116, 255, 0.2));
+    --text-white: #ffffff;
+    --text-dark: #333333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: white;
+    overflow-x: hidden;
+    background: var(--primary-gradient);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Spacing Utilities */
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }

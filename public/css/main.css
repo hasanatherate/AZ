@@ -1,0 +1,470 @@
+/* ========================================
+   ALL ZONE CORPORATE SERVICES - MAIN CSS
+   Modular CSS Architecture
+   ======================================== */
+
+/* Import Base Modules */
+@import url('./base.css');
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./components.css');
+@import url('./forms.css');
+@import url('./pages.css');
+@import url('./responsive.css');
+
+/* ========================================
+   PAGE-SPECIFIC STYLES
+   ======================================== */
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.1), rgba(0, 116, 255, 0.1));
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 50px;
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-section p,
+.footer-section li {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #5CE1E6;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Jurisdiction Section */
+.jurisdiction-section {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.jurisdiction-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.jurisdiction-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100%;
+}
+
+.jurisdiction-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.jurisdiction-card h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.jurisdiction-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.learn-more {
+    color: #5CE1E6;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.jurisdiction-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.jurisdiction-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Services Overview */
+.services-overview {
+    padding: 80px 0;
+}
+
+/* About Page Styles */
+.about-hero {
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.8), rgba(0, 116, 255, 0.6));
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-section {
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.about-text p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Properties Section */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.property-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.property-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.property-image {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.05);
+}
+
+.property-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #0074FF;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.property-content {
+    padding: 1.5rem;
+}
+
+.property-content h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.property-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.property-price {
+    color: #5CE1E6;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.property-features {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+.feature-item i {
+    color: #5CE1E6;
+    font-size: 0.9rem;
+}
+
+/* Property Details */
+.property-details {
+    padding: 80px 0;
+}
+
+.property-info {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Government Agencies Section */
+.government-agencies {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(92, 225, 230, 0.1), rgba(0, 116, 255, 0.1));
+}
+
+.government-agencies .section-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.government-agencies .section-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.agencies-slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.agencies-slider {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    flex: 1;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.agencies-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.agency-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 220px;
+    max-width: 220px;
+    flex-shrink: 0;
+}
+
+.agency-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(92, 225, 230, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.agency-logo {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.agency-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.agency-item h3 {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.slider-btn {
+    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(92, 225, 230, 0.3);
+    flex-shrink: 0;
+}
+
+.slider-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(92, 225, 230, 0.5);
+}
+
+.slider-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.slider-btn:disabled:hover {
+    transform: none;
+}
+
+/* Process Timeline */
+.process-timeline {
+    padding: 80px 0;
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-number {
+    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.timeline-content h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}

@@ -2,50 +2,238 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Your Complete Business Solution Partner</h1>
-            <p>From business setup to accounting, tax services, and real estate - All Zone Corporate Services provides comprehensive solutions for all your business needs.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">Our Services</a>
-                <a href="#contact" class="btn btn-secondary">Get Consultation</a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Complete Business Solution Partner</h1>
+                    <p>From business setup to accounting, tax services, and real estate - All Zone Corporate Services provides comprehensive solutions for all your business needs.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-form">
+                    <div class="form-container">
+                        <h3>Get Free Consultation</h3>
+                        <form action="https://formsubmit.co/marcolyester@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="New Inquiry - All Zone Corporate">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address" required>
+                            </div>
+                            <div class="form-group phone-input-group">
+                                <div class="country-selector">
+                                    <select class="country-code" name="country_code" required>
+                                        <option value="+91" data-flag="🇮🇳" selected>🇮🇳 +91</option>
+                                        <option value="+971" data-flag="🇦🇪">🇦🇪 +971</option>
+                                    </select>
+                                </div>
+                                <input type="tel" name="phone" placeholder="Your Phone Number" autocomplete="tel" pattern="[0-9]{9,10}" title="Please enter 10 digits for India (+91) or 9 digits for UAE (+971)" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="interest" required>
+                                    <option value="">I'm interested in...</option>
+                                    <option value="business-setup">Business Setup</option>
+                                    <option value="accounting">Accounting & Tax</option>
+                                    <option value="real-estate">Real Estate</option>
+                                    <option value="consultation">Free Consultation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Tell us how we can help you" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Get Free Consultation</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-<!-- About Section -->
-<section id="about" class="about">
-    <div class="container">
-        <div class="section-header">
-            <h2>About Marco</h2>
-            <p>Your trusted business services professional</p>
-        </div>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="/marco photo.jpg" alt="Marco - Business Services Professional">
+    <!-- Choose Jurisdiction Section -->
+    <section class="jurisdiction-section">
+        <div class="container">
+            <div class="jurisdiction-header">
+                <h2>Choose The Right Jurisdiction</h2>
+                <p>Select the most suitable setup—Free Zone or Mainland—for your business goals.</p>
             </div>
-            <div class="about-text">
-                <h3>Marco Lye</h3>
-                <p class="title">Managing Director</p>
-                <p>With more than 27 years of experience in Sales, Business Development, and Corporate Services, Marco brings a wealth of knowledge and leadership to the team. His career has taken him across the Middle East, where he has gained a deep understanding of the region's business environment and federal systems.</p>
+            
+            <div class="jurisdiction-grid">
+                <a href="/free-zone-setup" class="jurisdiction-link">
+                    <div class="jurisdiction-card free-zone">
+                        <h3>Free Zone Company Setup</h3>
+                        <p>Ideal for full ownership, tax benefits, and operating within specific zones with simplified regulations.</p>
+                        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
                 
-                <p>Marco is known for his strategic mindset and hands-on approach. He has extensive expertise in business setup processes—ranging from licensing and visa facilitation to documentation and compliance. His strong global network allows him to deliver efficient, tailored solutions for clients looking to establish or expand their presence in the region.</p>
-                
-                <p>As Managing Director, Marco is driven by a commitment to excellence, operational efficiency, and client success. His leadership continues to play a key role in the company's growth and strong reputation in the market.</p>
+                <a href="/mainland-setup" class="jurisdiction-link">
+                    <div class="jurisdiction-card mainland">
+                        <h3>Mainland Company Setup</h3>
+                        <p>Allows businesses across the UAE with no restrictions, full ownership for many activities, and access to government contracts.</p>
+                        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <div class="insight-section">
-                    <h4>My Insight</h4>
-                    <p>At AZ Corporate Services, we are passionate about turning ideas into thriving enterprises and transforming spaces into opportunities. Founded with a vision to simplify the journey of entrepreneurship and property investment, we specialize in Business Setup and Real Estate Solutions tailored to meet the dynamic needs of today's market.</p>
-                    
-                    <p>Whether you're a budding entrepreneur looking to establish your first venture or an investor seeking the perfect property, our team brings deep industry expertise, local insights, and a commitment to excellence. From navigating legal frameworks and compliance to identifying prime locations and negotiating deals, we handle the complexities so you can focus on growth.</p>
-                    
-                    <p>We believe in building lasting relationships through transparency, integrity, and personalized service. Our approach is consultative, collaborative, and always client-first — because your success is our business.</p>
-                    
-                    <p>Let us help you lay the foundation for your future.</p>
+    <!-- Services Overview -->
+    <section id="services" class="services-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Business Setup Services</h2>
+                <p>Comprehensive solutions for your business establishment in the UAE</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>UAE Company Formation</h3>
+                    <p>Complete company formation services for mainland, free zone, and offshore businesses with 100% foreign ownership options across the UAE.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>UAE Visa Services</h3>
+                    <p>Comprehensive visa processing including investor visas, employment visas, family visas, and golden visa applications with fast processing times.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>PRO Services</h3>
+                    <p>Professional Public Relations Officer services to handle all government transactions, document processing, and regulatory compliance requirements.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>UAE Visa License</h3>
+                    <p>Specialized visa licensing services including trade license linking, immigration compliance, and work permit arrangements for your employees.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Office Space</h3>
+                    <p>Prime office spaces and virtual office solutions across Dubai, Abu Dhabi, and other emirates with flexible lease terms and premium locations.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Tax and VAT Services</h3>
+                    <p>Complete tax advisory, VAT registration, compliance, and filing services to ensure your business meets all UAE tax obligations efficiently.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Corporate Training</h3>
+                    <p>Professional development and corporate training programs to enhance your team's skills in UAE business practices and compliance requirements.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Government Agencies Section -->
+    <section class="government-agencies">
+        <div class="container">
+            <div class="section-header">
+                <h2>We Work Closely with All Government Agencies</h2>
+                <p>Our strong relationships with UAE government bodies ensure smooth processing and compliance for all your business needs</p>
+            </div>
+            
+            <div class="agencies-slider-container">
+                <button class="slider-btn prev-btn" onclick="slideAgencies('prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="agencies-slider" id="agenciesSlider">
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/dubai-government.png" alt="Government of Dubai" />
+                        </div>
+                        <h3>Government of Dubai</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/federal-tax-authority.png" alt="Federal Tax Authority" />
+                        </div>
+                        <h3>Federal Tax Authority</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/dubai-economy.png" alt="Dubai Economy & Tourism" />
+                        </div>
+                        <h3>Dubai Economy & Tourism</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/dubai-police.png" alt="Dubai Police" />
+                        </div>
+                        <h3>Dubai Police</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/dubai-courts.png" alt="Dubai Courts" />
+                        </div>
+                        <h3>Dubai Courts</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/ministry-of-justice.png" alt="Ministry of Justice" />
+                        </div>
+                        <h3>Ministry of Justice</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/ministry-of-economy.png" alt="Ministry of Economy" />
+                        </div>
+                        <h3>Ministry of Economy</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/emirates-id.png" alt="Emirates ID Authority" />
+                        </div>
+                        <h3>Emirates ID Authority</h3>
+                    </div>
+                    
+                    <div class="agency-item">
+                        <div class="agency-logo">
+                            <img src="/images/government/securities-commodities-authority.png" alt="Securities & Commodities Authority" />
+                        </div>
+                        <h3>Securities & Commodities Authority</h3>
+                    </div>
+                </div>
+                
+                <button class="slider-btn next-btn" onclick="slideAgencies('next')">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
 <!-- Featured Properties Section -->
 <section id="properties" class="properties">
@@ -92,517 +280,4 @@
     </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="testimonials">
-    <div class="container">
-        <div class="section-header">
-            <h2>What Clients Say</h2>
-            <p>Real experiences from satisfied homeowners</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Marco made our home buying experience incredibly smooth. His expertise and dedication helped us find our dream home within our budget."</p>
-                <div class="client-info">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
-                    <div>
-                        <h4>Sarah Johnson</h4>
-                        <p>Homeowner</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Professional, knowledgeable, and always available. Marco sold our house in just 2 weeks at asking price!"</p>
-                <div class="client-info">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Chen">
-                    <div>
-                        <h4>Michael Chen</h4>
-                        <p>Property Seller</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Excellent investment advice! Marco helped us build a profitable real estate portfolio. Highly recommended!"</p>
-                <div class="client-info">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emily Rodriguez">
-                    <div>
-                        <h4>Emily Rodriguez</h4>
-                        <p>Investor</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <%- include('partials/footer') %>
-
-<!-- Scripts -->
-<script src="/script.js"></script>
-
-<style>
-/* Hero Section Fixes */
-.hero {
-    margin-top: 0;
-    padding: 60px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    display: flex;
-    align-items: center;
-    min-height: 60vh;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    line-height: 1.6;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-primary {
-    background: #3498db;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #2980b9;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: #667eea;
-    transform: translateY(-2px);
-}
-
-.hero-image {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 0;
-}
-
-.hero-image img {
-    width: 100%;
-    max-width: 350px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* About Section Fixes */
-.about {
-    padding: 5rem 0;
-    background: white;
-    margin-top: -2rem;
-    position: relative;
-    z-index: 10;
-}
-
-.about .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: #666;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.about-image img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.about-text h3 {
-    font-size: 1.8rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.about-text .title {
-    font-size: 1.1rem;
-    color: #3498db;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
-
-.about-text p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.stat {
-    text-align: center;
-    padding: 1rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.stat h4 {
-    font-size: 1.8rem;
-    color: #3498db;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.stat p {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.certifications {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.certifications h4 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.certifications ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.certifications li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-    color: #666;
-}
-
-.certifications i {
-    color: #3498db;
-    width: 20px;
-}
-
-/* Properties Section Fixes */
-.properties {
-    padding: 4rem 0;
-    background: #f8f9fa;
-}
-
-.properties .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.properties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.property-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.property-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.property-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.property-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.property-card:hover .property-image img {
-    transform: scale(1.05);
-}
-
-.property-status {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: #27ae60;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.status-for-sale {
-    background: #27ae60;
-}
-
-.status-for-rent {
-    background: #3498db;
-}
-
-.status-sold {
-    background: #e74c3c;
-}
-
-.property-info {
-    padding: 1.5rem;
-}
-
-.property-info h3 {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-}
-
-.property-location {
-    color: #666;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.property-location i {
-    color: #3498db;
-}
-
-.property-features {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-}
-
-.property-features span {
-    color: #666;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.property-features i {
-    color: #3498db;
-}
-
-.property-price {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #27ae60;
-}
-
-.properties-cta {
-    text-align: center;
-}
-
-.no-properties {
-    text-align: center;
-    color: #666;
-    font-style: italic;
-    grid-column: 1 / -1;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .hero {
-        padding: 40px 0;
-        min-height: 50vh;
-    }
-    
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .hero-image img {
-        max-width: 300px;
-        height: 250px;
-    }
-    
-    .about {
-        padding: 3rem 0;
-        margin-top: 0;
-    }
-    
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .properties {
-        padding: 3rem 0;
-    }
-    
-    .properties-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .property-features {
-        justify-content: space-between;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 60px 0;
-        min-height: 60vh;
-    }
-    
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    
-    .about {
-        padding: 3rem 0;
-    }
-    
-    .properties {
-        padding: 3rem 0;
-    }
-}
-</style>

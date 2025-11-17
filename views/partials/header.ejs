@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <meta name="description" content="<%= description %>">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dfcaqxkii/image/upload/v1763363667/logo_wi1wbk.png">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/property-details.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,10 +19,15 @@
         <div class="header-content">
             <!-- Logo -->
             <div class="logo">
-                <h1>All Zone <span>Corporate Services</span></h1>
-                <div class="header-flags">
-                    <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" class="flag">
-                    <img src="https://flagcdn.com/w20/in.png" alt="India Flag" class="flag">
+                <div class="logo-container">
+                    <img src="https://res.cloudinary.com/dfcaqxkii/image/upload/v1763363667/logo_wi1wbk.png" alt="AZ Corporate Services Logo" class="logo-image">
+                    <div class="logo-text">
+                        <h1>All Zone <span>Corporate Services</span></h1>
+                        <div class="header-flags">
+                            <img src=" https://flagcdn.com/w20/in.png" alt="India Flag" class="flag">
+                            <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" class="flag">
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -48,193 +54,96 @@
         <!-- Navigation -->
         <nav class="main-nav" id="main-nav">
             <a href="/" class="nav-link">Home</a>
-            <a href="/business-setup" class="nav-link">Business Setup</a>
-            <a href="/#services" class="nav-link">Accounting & Tax</a>
-            <a href="/#services" class="nav-link">Business Support</a>
+            
+            <!-- Business Setup Dropdown -->
+            <div class="nav-dropdown">
+                <a href="/business-setup" class="nav-link dropdown-trigger">
+                    Business Setup <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <h4>Company Formation</h4>
+                        <ul class="dropdown-list">
+                            <li><a href="/free-zone-setup">Free Zone Setup</a></li>
+                            <li><a href="/mainland-setup">Mainland Setup</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dropdown-section">
+                        <h4>Business Licensing</h4>
+                        <ul class="dropdown-list">
+                            <li><a href="/trade-license">Trade License</a></li>
+                            <li><a href="/professional-license">Professional License</a></li>
+                            <li><a href="/ecommerce-license">Ecommerce License</a></li>
+                            <li><a href="/commercial-license">Commercial License</a></li>
+                            <li><a href="/general-trading-license">General Trading License</a></li>
+                            <li><a href="/industrial-license">Industrial License</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Accounting & Tax Dropdown -->
+            <div class="nav-dropdown">
+                <a href="/#services" class="nav-link dropdown-trigger">
+                    Accounting & Tax <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <h4>Accounting</h4>
+                        <ul class="dropdown-list">
+                            <li><a href="/accounting-services">Accounting Services</a></li>
+                            <li><a href="/bookkeeping-services">Bookkeeping Services</a></li>
+                            <li><a href="/backlog-accounts">Updating of Backlog Accounts</a></li>
+                            <li><a href="/outsource-accounting">Outsource Accounting Services</a></li>
+                            <li><a href="/financial-reporting">Financial Reporting</a></li>
+                            <li><a href="/accounting-supervision">Accounting Supervision Services</a></li>
+                            <li><a href="/accountant-secondment">Accountant Secondment</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dropdown-section">
+                        <h4>Tax Services</h4>
+                        <div class="tax-subsection">
+                            <h5>Corporate Tax</h5>
+                            <ul class="dropdown-list">
+                                <li><a href="/corporate-tax-registration">Corporate Tax Registration</a></li>
+                                <li><a href="/corporate-tax-assessment">Corporate Tax Assessment</a></li>
+                                <li><a href="/corporate-tax-filing">Corporate Tax Filing</a></li>
+                                <li><a href="/transfer-pricing">Transfer Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="tax-subsection">
+                            <h5>VAT Services</h5>
+                            <ul class="dropdown-list">
+                                <li><a href="/vat-registration">VAT Registration</a></li>
+                                <li><a href="/vat-returns-filing">VAT Returns Filing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Business Support Dropdown -->
+            <div class="nav-dropdown">
+                <a href="/#services" class="nav-link dropdown-trigger">
+                    Business Support <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <h4>Business Support Services</h4>
+                        <ul class="dropdown-list">
+                            <li><a href="/legal-services">Legal Services</a></li>
+                            <li><a href="/bank-account-opening">Bank Account Opening</a></li>
+                            <li><a href="/golden-visa">Golden Visa</a></li>
+                            <li><a href="/trademark-registration">Trademark Registration</a></li>
+                            <li><a href="/pro-services">PRO Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <a href="/#properties" class="nav-link">Real Estate</a>
-            <a href="/#about" class="nav-link">About</a>
+            <a href="/about" class="nav-link">About</a>
             <a href="/#contact" class="nav-link">Contact</a>
         </nav>
     </div>
 </header>
-
-<style>
-.sleek-header {
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin: 0 0 0.5rem 0;
-}
-
-.logo span {
-    color: #3498db;
-}
-
-.logo .header-flags {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    margin-top: 0.3rem;
-}
-
-.header-contact {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.flag {
-    width: 20px;
-    height: auto;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.contact-item i {
-    color: #3498db;
-    font-size: 0.8rem;
-}
-
-.contact-item a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-item a:hover {
-    color: #3498db;
-}
-
-.mobile-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 3px;
-}
-
-.mobile-toggle span {
-    width: 25px;
-    height: 3px;
-    background: #2c3e50;
-    transition: 0.3s;
-}
-
-.main-nav {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1rem 0;
-    border-top: 1px solid #eee;
-    flex-wrap: wrap;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    transition: all 0.3s;
-    font-size: 0.9rem;
-    white-space: nowrap;
-}
-
-.nav-link:hover {
-    background: #3498db;
-    color: white;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .header-content {
-        flex-wrap: wrap;
-    }
-    
-    .header-contact {
-        display: none;
-    }
-    
-    .mobile-toggle {
-        display: flex;
-    }
-    
-    .main-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        gap: 0;
-        border-top: none;
-        padding: 0;
-    }
-    
-    .main-nav.active {
-        display: flex;
-    }
-    
-    .nav-link {
-        padding: 1rem;
-        border-radius: 0;
-        border-bottom: 1px solid #eee;
-        font-size: 1rem;
-    }
-    
-    .logo h1 {
-        font-size: 1.5rem;
-    }
-    
-    .contact-item {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .main-nav {
-        gap: 1rem;
-    }
-    
-    .nav-link {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
-    }
-    
-    .header-contact {
-        gap: 1rem;
-    }
-    
-    .contact-item {
-        font-size: 0.8rem;
-    }
-    
-    .contact-item span {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo h1 {
-        font-size: 1.3rem;
-    }
-}
-</style>

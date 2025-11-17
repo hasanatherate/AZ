@@ -1,0 +1,735 @@
+/* ========================================
+   SERVICE PAGES & ABOUT PAGE STYLES
+   Optimized with reusable classes
+   ======================================== */
+
+/* Common Section Backgrounds */
+.page-section {
+    padding: 80px 0;
+}
+
+.page-section--light {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.page-section--lighter {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.page-section--hero {
+    padding: 120px 0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Common Grid Layouts */
+.content-grid {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+}
+
+.content-grid--two-col {
+    grid-template-columns: 1fr 1fr;
+}
+
+.content-grid--sidebar {
+    grid-template-columns: 300px 1fr;
+}
+
+.content-grid--items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.content-grid--timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    justify-items: center;
+}
+
+/* Reusable Card Component */
+.content-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.content-card__icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(92, 225, 230, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.content-card__icon i {
+    font-size: 2rem;
+    color: #5CE1E6;
+}
+
+.content-card h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.content-card p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+}
+
+/* Process Timeline Component */
+.process-step {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.process-step__number {
+    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(92, 225, 230, 0.3);
+}
+
+.process-step h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.process-step p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Hero Text Styles */
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.hero-text__description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+}
+
+.hero-text__subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Image Components */
+.content-image {
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.content-image--about {
+    width: 320px;
+    height: 480px;
+}
+
+.content-image--hero {
+    width: 100%;
+    height: 400px;
+}
+
+.content-image--profile {
+    width: 250px;
+    height: 320px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Content */
+.content-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+.content-text h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.content-text h4 {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #5CE1E6;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.content-text--highlight {
+    color: #5CE1E6;
+    font-weight: 600;
+}
+
+.content-text--closing {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific Page Classes */
+.about-us,
+.licensing-hero {
+    padding: 120px 0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.marco-story {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.marco-image {
+    position: sticky;
+    top: 2rem;
+}
+
+.licensing-benefits,
+.licensing-details,
+.overview-section {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.licensing-process {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.overview-section {
+    text-align: center;
+}
+
+.overview-section h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.overview-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Apply reusable classes to existing elements */
+.services-grid,
+.activities-grid,
+.benefits-grid,
+.support-grid,
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.business-types,
+.business-categories,
+.trading-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    justify-items: center;
+}
+
+/* All card classes removed - using service-card from components.css instead */
+
+.service-item:hover,
+.activity-item:hover,
+.benefit-item:hover,
+.support-item:hover,
+.detail-item:hover,
+.business-type:hover,
+.category-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon,
+.activity-icon,
+.benefit-icon,
+.support-icon,
+.detail-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(92, 225, 230, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.service-icon i,
+.activity-icon i,
+.benefit-icon i,
+.support-icon i,
+.detail-icon i {
+    font-size: 1.8rem;
+    color: #5CE1E6;
+}
+
+.service-item h3,
+.activity-item h3,
+.benefit-item h3,
+.support-item h3,
+.detail-item h3,
+.business-type h3,
+.category-item h3 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.3;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.service-item p,
+.activity-item p,
+.benefit-item p,
+.support-item p,
+.detail-item p,
+.business-type p,
+.category-item p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+    font-size: 0.85rem;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.business-type i,
+.category-item i {
+    font-size: 2.2rem;
+    color: #5CE1E6;
+    flex-shrink: 0;
+}
+
+.licensing-cta,
+.license-cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    text-align: center;
+}
+
+.licensing-cta h2,
+.license-cta h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.licensing-cta p,
+.license-cta p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-number {
+    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(92, 225, 230, 0.3);
+}
+
+/* About Page Specific Styles */
+.about-us-hero {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-us-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.image-section {
+    text-align: center;
+}
+
+.about-image {
+    width: 320px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.about-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.about-text .subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+.about-text .closing {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 2rem;
+}
+
+.story-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.marco-info {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.marco-image img {
+    width: 250px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.story-text h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.story-text .title {
+    font-size: 1.3rem;
+    color: #5CE1E6;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.experience-section h4 {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #5CE1E6;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+/* Service Page Hero Styles */
+.licensing-hero .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.licensing-hero .hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.licensing-hero .hero-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+}
+
+.licensing-hero .hero-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Business Setup Image Grid */
+.advisors-images {
+    margin-top: 3rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Free Zone Page Specific Styles */
+.zones-category {
+    margin-bottom: 4rem;
+}
+
+.zones-category h3 {
+    font-size: 2rem;
+    color: #5CE1E6;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.help-text {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.help-text p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.cost-factors {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.cost-factors li {
+    padding: 0.8rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.cost-factors li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #5CE1E6;
+    font-weight: bold;
+}
+
+.cost-info {
+    background: rgba(92, 225, 230, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-left: 4px solid #5CE1E6;
+}
+
+.cost-info p {
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cost-info strong {
+    color: #5CE1E6;
+    font-size: 1.1rem;
+}
+
+.confidence-text {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.confidence-text p {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+}
+
+/* License Types List Styling */
+.license-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.license-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.license-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.license-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.license-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.license-content h3 {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.license-content p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0;
+}
