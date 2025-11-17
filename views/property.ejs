@@ -57,10 +57,11 @@
         <!-- Contact Form -->
         <div class="inquiry-form">
             <h2>Interested in This Property?</h2>
-            <form action="https://formsubmit.co/marcolyester@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Property Inquiry: <%= property.name %>">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="<%= process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000' %>/thank-you">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="b4ac8ae8-e94c-4ae9-9329-954535611f63">
+                <input type="hidden" name="subject" value="Property Inquiry: <%= property.name %>">
+                <input type="hidden" name="from_name" value="All Zone Corporate Website">
+                <input type="hidden" name="redirect" value="<%= process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000' %>/thank-you">
                 <input type="hidden" name="property" value="<%= property.name %>">
                 <input type="hidden" name="property_id" value="<%= property._id %>">
                 
