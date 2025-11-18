@@ -53,6 +53,11 @@
         pointer-events: none;
     }
     
+    /* Hide hero form on index page mobile only */
+    .hero .hero-form {
+        display: none;
+    }
+    
     .hero-content,
     .business-hero .hero-content {
         grid-template-columns: 1fr !important;
@@ -60,8 +65,6 @@
         text-align: center;
         margin-top: 20px;
         padding: 0 !important;
-        position: relative;
-        z-index: 10;
     }
     
     .hero-form {
