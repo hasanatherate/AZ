@@ -471,8 +471,7 @@
     
     /* Ensure no parent elements block touch events */
     .hero-content, .business-hero .hero-content,
-    .jurisdiction-grid, .services-grid,
-    .hero-buttons {
+    .jurisdiction-grid, .services-grid {
         pointer-events: none !important;
     }
     
