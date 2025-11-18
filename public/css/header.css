@@ -406,3 +406,29 @@
     color: #5CE1E6;
     padding-left: 25px;
 }
+
+/* ===========================
+   MOBILE RESPONSIVE RULES
+   =========================== */
+@media (max-width: 768px) {
+    /* Hide desktop navigation */
+    .main-nav {
+        display: none;
+    }
+    
+    /* Show mobile toggle button */
+    .mobile-toggle {
+        display: flex !important;
+    }
+    
+    /* Show mobile sidebar elements */
+    .mobile-sidebar-overlay,
+    .mobile-sidebar {
+        display: block;
+    }
+    
+    /* Hide dropdown menus */
+    .dropdown-menu {
+        display: none !important;
+    }
+}
