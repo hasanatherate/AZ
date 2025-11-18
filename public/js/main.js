@@ -96,14 +96,23 @@ class PopupManager {
         // Only select buttons with popup-trigger class - be more specific
         const popupButtons = document.querySelectorAll('.popup-trigger');
         
-        popupButtons.forEach(button => {
+        popupButtons.forEach((button, index) => {
             // Don't remove href, just prevent default on click
             button.style.cursor = 'pointer';
+            button.style.position = 'relative';
+            button.style.zIndex = '10000';
+            button.style.pointerEvents = 'auto';
+            button.style.touchAction = 'manipulation';
             
-            button.addEventListener('click', (e) => {
+            // Add both click and touchstart for mobile
+            const showPopupHandler = (e) => {
                 e.preventDefault();
+                e.stopPropagation();
                 this.showPopup();
-            }, { passive: false });
+            };
+            
+            button.addEventListener('click', showPopupHandler, { passive: false });
+            button.addEventListener('touchstart', showPopupHandler, { passive: false });
         });
     }
 }

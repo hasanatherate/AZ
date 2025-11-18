@@ -456,6 +456,19 @@
         cursor: pointer !important;
     }
     
+    /* Extra specific fix for popup-trigger buttons */
+    .popup-trigger {
+        display: inline-block !important;
+        -webkit-tap-highlight-color: rgba(255, 68, 68, 0.4) !important;
+        background-color: transparent !important;
+        border: none !important;
+        padding: 12px 24px !important;
+        margin: 0 !important;
+        outline: none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+    
     /* Ensure no parent elements block touch events */
     .hero-content, .business-hero .hero-content,
     .jurisdiction-grid, .services-grid,
