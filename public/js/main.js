@@ -78,7 +78,7 @@ class PopupManager {
         // Start interval for subsequent popups (every 50 seconds)
         this.popupInterval = setInterval(() => {
             this.showPopup();
-        }, 50000);
+        }, 60000);
     }
 
     showPopup() {
