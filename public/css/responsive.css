@@ -1,10 +1,117 @@
 /* ========================================
-   SIMPLIFIED RESPONSIVE STYLES - MOBILE ONLY
-   Focused on Get Started buttons and essential mobile functionality
+   RESPONSIVE STYLES - MOBILE ONLY
+   Complete mobile implementation including sidebar
    ======================================== */
 
 /* Mobile Styles - 768px and below */
 @media (max-width: 768px) {
+    
+    /* Container */
+    .container {
+        padding: 0 20px;
+        width: 100%;
+    }
+    
+    /* Header - Mobile Navigation */
+    .sleek-header {
+        padding: 0.5rem 0;
+    }
+    
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-contact {
+        display: none;
+    }
+    
+    .main-nav {
+        display: none !important;
+    }
+    
+    .mobile-toggle {
+        display: flex !important;
+    }
+    
+    .mobile-sidebar-overlay {
+        display: block;
+    }
+    
+    .mobile-sidebar-overlay.active {
+        display: block !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-sidebar {
+        display: block;
+    }
+    
+    .dropdown-menu {
+        display: none !important;
+    }
+    
+    /* Hero Sections */
+    .hero {
+        min-height: 100vh;
+        padding: 120px 20px 60px;
+        position: relative;
+    }
+    
+    .hero::before {
+        pointer-events: none;
+    }
+    
+    .hero-content,
+    .business-hero .hero-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        text-align: center;
+        margin-top: 20px;
+        padding: 0 !important;
+    }
+    
+    .hero-text,
+    .business-hero .hero-text {
+        text-align: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    .business-hero {
+        min-height: 60vh;
+        padding: 120px 20px 60px !important;
+        position: relative;
+    }
+    
+    .business-hero::before {
+        pointer-events: none;
+    }
+    
+    .business-hero .hero-text h1 {
+        font-size: 2rem !important;
+    }
+    
+    .business-hero .hero-description,
+    .hero-text__description {
+        font-size: 1rem !important;
+        line-height: 1.6;
+    }
+    
+    .hero-text__subtitle {
+        font-size: 1.1rem;
+    }
     
     /* Hero Button Container - Mobile optimized */
     .hero-buttons {
@@ -96,6 +203,30 @@
 
 /* Small Mobile - 480px and below */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 100vh;
+        padding: 100px 15px 50px;
+    }
+    
+    .business-hero {
+        min-height: 60vh;
+        padding: 100px 15px 50px !important;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem !important;
+        line-height: 1.5;
+    }
     
     /* Slightly smaller buttons for very small screens */
     .btn,
@@ -115,21 +246,5 @@
     .hero-buttons {
         gap: 0.5rem;
         margin-top: 1rem;
-    }
-}
-
-/* Extra Small Mobile - 360px and below */
-@media (max-width: 360px) {
-    
-    .btn,
-    .popup-trigger,
-    a.btn,
-    button.btn {
-        padding: 10px 18px !important;
-        font-size: 0.9rem !important;
-    }
-    
-    .hero-buttons .btn {
-        max-width: 240px;
     }
 }

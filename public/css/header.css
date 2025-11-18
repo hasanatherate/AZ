@@ -133,7 +133,6 @@
 }
 
 .mobile-sidebar-overlay.active {
-    display: block;
     opacity: 1;
 }
 
@@ -406,26 +405,4 @@
     background: rgba(92, 225, 230, 0.2);
     color: #5CE1E6;
     padding-left: 25px;
-}
-
-/* ===========================
-   MOBILE RESPONSIVE RULES
-   =========================== */
-@media (max-width: 768px) {
-    /* Hide desktop navigation */
-    .main-nav {
-        display: none;
-    }
-    
-    /* Show mobile toggle button */
-    .mobile-toggle {
-        display: flex !important;
-    }
-    
-    /* Mobile sidebar elements are already styled above, just ensure they work on mobile */
-    
-    /* Hide dropdown menus */
-    .dropdown-menu {
-        display: none !important;
-    }
 }
