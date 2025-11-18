@@ -11,8 +11,9 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
-    z-index: 10;
+    z-index: 100;
     pointer-events: auto;
+    touch-action: auto;
 }
 
 .form-container h3 {
@@ -45,8 +46,9 @@
     color: white;
     font-family: inherit;
     position: relative;
-    z-index: 10;
+    z-index: 100;
     pointer-events: auto;
+    touch-action: manipulation;
     touch-action: manipulation;
 }
 
