@@ -104,49 +104,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.get('/', async (req, res) => {
-    const properties = await getProperties();
-    let featuredProperties = properties.filter(p => p.featured);
-    
-    // If we don't have enough featured properties, fill with regular properties
-    if (featuredProperties.length < 3) {
-        const additionalProperties = properties
-            .filter(p => !p.featured)
-            .slice(0, 3 - featuredProperties.length);
-        featuredProperties = [...featuredProperties, ...additionalProperties];
-    }
-    
-    // Limit to 3 properties
-    featuredProperties = featuredProperties.slice(0, 3);
-    
+app.get('/', (req, res) => {
     const pageData = {
         title: 'All Zone Corporate Services - Your Trusted Business Partner',
         description: 'From business setup to accounting, tax services, and real estate - All Zone Corporate Services provides comprehensive solutions for all your business needs.',
-        currentPage: 'home',
-        featuredProperties: featuredProperties
+        currentPage: 'home'
     };
     res.render('index', pageData);
-});
-
-app.get('/property/:id', async (req, res) => {
-    const propertyId = req.params.id;
-    const property = await getPropertyById(propertyId);
-    
-    if (!property) {
-        return res.status(404).render('404', {
-            title: 'Property Not Found',
-            description: 'The requested property could not be found.',
-            currentPage: 'error'
-        });
-    }
-    
-    const pageData = {
-        title: `${property.name} - All Zone Corporate Services`,
-        description: property.description || 'Beautiful property for sale or rent.',
-        currentPage: 'property',
-        property: property
-    };
-    res.render('property', pageData);
 });
 
 app.get('/business-setup', (req, res) => {
@@ -183,6 +147,15 @@ app.get('/about', (req, res) => {
         currentPage: 'about'
     };
     res.render('about', pageData);
+});
+
+app.get('/real-estate', (req, res) => {
+    const pageData = {
+        title: 'Dubai Real Estate - Premium Properties | All Zone Corporate Services',
+        description: 'Discover premium real estate in Dubai. From luxury apartments to stunning villas, find your perfect property in the UAE with expert guidance.',
+        currentPage: 'real-estate'
+    };
+    res.render('real-estate', pageData);
 });
 
 // Business Licensing Routes

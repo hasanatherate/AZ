@@ -4,7 +4,7 @@
 
 /* Base Form Container */
 .form-container {
-    background: linear-gradient(135deg, rgba(92, 225, 230, 0.15), rgba(0, 116, 255, 0.15));
+    background: rgba(0, 116, 255, 0.08);
     backdrop-filter: blur(15px);
     border-radius: 20px;
     padding: 2rem;
@@ -182,7 +182,7 @@
 }
 
 .popup-content {
-    background: linear-gradient(135deg, rgba(92, 225, 230, 0.15), rgba(0, 116, 255, 0.15));
+    background: rgba(0, 116, 255, 0.08);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
@@ -374,7 +374,7 @@
 .popup-submit-btn {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     color: white;
     border: none;
     border-radius: 10px;

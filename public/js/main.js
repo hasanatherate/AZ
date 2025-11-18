@@ -64,15 +64,21 @@ class PopupManager {
         this.popupTimer = setTimeout(() => {
             this.showPopup();
             
-            // Then show popup every 30 seconds
+            // Then show popup every 50 seconds
             this.startRecurringPopups();
         }, 10000);
     }
 
     startRecurringPopups() {
+        // Clear any existing interval first
+        if (this.popupInterval) {
+            clearInterval(this.popupInterval);
+        }
+        
+        // Start interval for subsequent popups (every 50 seconds)
         this.popupInterval = setInterval(() => {
             this.showPopup();
-        }, 30000);
+        }, 50000);
     }
 
     showPopup() {
@@ -314,8 +320,8 @@ class FormValidator {
 class AgenciesSlider {
     constructor() {
         this.slider = document.querySelector('.agencies-slider');
-        this.prevBtn = document.querySelector('.slider-btn.prev');
-        this.nextBtn = document.querySelector('.slider-btn.next');
+        this.prevBtn = document.querySelector('.slider-btn.prev-btn');
+        this.nextBtn = document.querySelector('.slider-btn.next-btn');
         this.scrollAmount = 240; // Width of one agency item + gap
         
         if (this.slider && this.prevBtn && this.nextBtn) {

@@ -211,6 +211,9 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .property-card:hover {
@@ -248,37 +251,59 @@
     text-transform: uppercase;
 }
 
-.property-content {
+.property-content,
+.property-info {
     padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.property-content h3 {
+.property-content h3,
+.property-info h3 {
     color: white;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
-.property-content p {
+.property-content p,
+.property-info p {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     margin-bottom: 1rem;
     line-height: 1.5;
 }
 
+.property-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.property-location i {
+    color: #5CE1E6;
+}
+
 .property-price {
     color: #5CE1E6;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .property-features {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
+.property-features span,
 .feature-item {
     display: flex;
     align-items: center;
@@ -287,6 +312,7 @@
     font-size: 0.85rem;
 }
 
+.property-features span i,
 .feature-item i {
     color: #5CE1E6;
     font-size: 0.9rem;
@@ -309,7 +335,7 @@
 /* Government Agencies Section */
 .government-agencies {
     padding: 100px 0;
-    background: linear-gradient(135deg, rgba(92, 225, 230, 0.1), rgba(0, 116, 255, 0.1));
+    background: rgba(0, 116, 255, 0.05);
 }
 
 .government-agencies .section-header h2 {
@@ -403,7 +429,7 @@
 }
 
 .slider-btn {
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     border: none;
     color: white;
     width: 50px;
@@ -451,7 +477,7 @@
 }
 
 .timeline-number {
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     color: white;
     width: 60px;
     height: 60px;
@@ -474,4 +500,187 @@
 .timeline-content p {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
+}
+
+/* Real Estate Page Styles */
+.real-estate-benefits {
+    margin-top: 80px;
+    padding: 60px 0;
+    background: rgba(0, 116, 255, 0.03);
+    border-radius: 20px;
+}
+
+.real-estate-benefits .section-header {
+    margin-bottom: 50px;
+}
+
+.real-estate-benefits .section-header h3 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 116, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 116, 255, 0.2);
+}
+
+.benefit-item i {
+    font-size: 2.5rem;
+    color: #0074FF;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.benefit-item h4 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.benefit-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Property Card Enhancements for Real Estate Page */
+.properties .property-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.properties .property-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 116, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 116, 255, 0.25);
+}
+
+.property-description {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(0, 116, 255, 0.05);
+    border-radius: 10px;
+    border-left: 3px solid #0074FF;
+}
+
+.property-description p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.property-info .btn {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Properties CTA Section */
+.properties-cta {
+    text-align: center;
+    margin-top: 80px;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, rgba(0, 116, 255, 0.1), rgba(0, 116, 255, 0.05));
+    border-radius: 20px;
+    border: 1px solid rgba(0, 116, 255, 0.2);
+}
+
+.properties-cta h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.properties-cta p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Design for Real Estate Page */
+@media (max-width: 768px) {
+    .real-estate-benefits {
+        margin-top: 50px;
+        padding: 40px 0;
+    }
+    
+    .real-estate-benefits .section-header h3 {
+        font-size: 1.8rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .benefit-item {
+        padding: 25px 15px;
+    }
+    
+    .benefit-item i {
+        font-size: 2rem;
+    }
+    
+    .benefit-item h4 {
+        font-size: 1.2rem;
+    }
+    
+    .properties-cta {
+        margin-top: 50px;
+        padding: 40px 20px;
+    }
+    
+    .properties-cta h3 {
+        font-size: 1.6rem;
+    }
+    
+    .properties-cta p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-item {
+        padding: 20px 10px;
+    }
+    
+    .property-description {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .properties-cta {
+        padding: 30px 15px;
+    }
 }

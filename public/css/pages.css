@@ -104,7 +104,7 @@
 }
 
 .process-step__number {
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     color: white;
     width: 60px;
     height: 60px;
@@ -226,7 +226,7 @@
 /* CTA Section */
 .cta-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     text-align: center;
 }
 
@@ -405,7 +405,7 @@
 .licensing-cta,
 .license-cta {
     padding: 100px 0;
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     text-align: center;
 }
 
@@ -428,7 +428,7 @@
 }
 
 .step-number {
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     color: white;
     width: 60px;
     height: 60px;
@@ -715,7 +715,7 @@
 .license-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #5CE1E6, #0074FF);
+    background: #0074FF;
     border-radius: 50%;
     display: flex;
     align-items: center;
