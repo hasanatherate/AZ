@@ -71,7 +71,7 @@
         
         /* Mobile touch optimizations */
         position: relative !important;
-        z-index: 1000 !important;
+        z-index: 10000 !important; /* Much higher than sidebar (1001) */
         pointer-events: auto !important;
         touch-action: manipulation !important;
         cursor: pointer !important;
@@ -118,10 +118,10 @@
     .popup-trigger {
         display: inline-block !important;
         -webkit-tap-highlight-color: rgba(92, 225, 230, 0.4) !important;
-        z-index: 9999 !important; /* Highest priority for popup triggers */
+        z-index: 10001 !important; /* Higher than buttons and sidebar */
     }
     
-    /* Ensure clickable elements work on mobile */
+    /* Ensure clickable elements work on mobile - Force override any blocking styles */
     a, button, [role="button"], .btn, .popup-trigger {
         -webkit-tap-highlight-color: rgba(92, 225, 230, 0.3) !important;
         -webkit-touch-callout: none !important;
@@ -129,6 +129,17 @@
         pointer-events: auto !important;
         position: relative !important;
         cursor: pointer !important;
+        z-index: 9999 !important;
+    }
+    
+    /* Extra force for hero and business sections to not block clicks */
+    .hero, .business-hero, .hero-content, .business-hero .hero-content {
+        pointer-events: none !important;
+    }
+    
+    /* But allow their children (buttons, forms) to be clickable */
+    .hero *, .business-hero *, .hero-content *, .business-hero .hero-content * {
+        pointer-events: auto !important;
     }
 }
 
