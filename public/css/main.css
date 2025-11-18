@@ -99,6 +99,8 @@
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.2);
     height: 100%;
+    position: relative;
+    z-index: 100;
 }
 
 .jurisdiction-card:hover {
@@ -138,6 +140,10 @@
     text-decoration: none;
     color: inherit;
     display: block;
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .jurisdiction-link:hover {
