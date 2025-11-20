@@ -1,0 +1,447 @@
+/* ========================================
+   PROPERTY DETAIL PAGES
+   ======================================== */
+
+/* Additional variables for properties */
+:root {
+    --primary-color: #0074FF;
+    --secondary-color: #0056CC;
+    --accent-color: #5CE1E6;
+    --text-color: #333333;
+    --bg-light: #f8f9fa;
+}
+
+/* Property Card Styles - Image Top, Info Bottom */
+.property-card-simple {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.property-card-simple:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.property-card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.property-info {
+    padding: 25px;
+    background: none;
+}
+
+.property-info h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.property-price,
+.property-type {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.property-info .btn {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.property-detail {
+    padding: 60px 0;
+    min-height: 100vh;
+}
+
+.property-header {
+    margin-bottom: 40px;
+}
+
+.property-header h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Property Layout */
+.property-main-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.property-image-container {
+    padding-right: 20px;
+    order: 1;
+}
+
+.property-details {
+    padding-left: 20px;
+    order: 2;
+}
+
+/* Property Image Gallery - Simple Arrow Navigation */
+.property-image-gallery {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-main {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.gallery-image.active {
+    opacity: 1;
+}
+
+/* Navigation Arrows */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.property-image-gallery:hover .gallery-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.gallery-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: 15px;
+}
+
+.gallery-nav.next {
+    right: 15px;
+}
+
+/* Image Counter */
+.gallery-counter {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-main {
+        height: 250px;
+    }
+    
+    .gallery-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .gallery-nav.prev {
+        left: 10px;
+    }
+    
+    .gallery-nav.next {
+        right: 10px;
+    }
+}
+
+/* Fallback for single image */
+.property-hero-image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: block;
+}
+
+.property-hero-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Property Content Sections */
+.property-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    transition: var(--transition);
+}
+
+.property-section:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.property-section h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.property-section p {
+    line-height: 1.7;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Pricing Tables */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.pricing-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pricing-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Lists */
+.payment-options,
+.highlights-list,
+.units-list {
+    list-style: none;
+    padding: 0;
+}
+
+.payment-options li,
+.highlights-list li,
+.units-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.payment-options li:before,
+.highlights-list li:before,
+.units-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.payment-options li:last-child,
+.highlights-list li:last-child,
+.units-list li:last-child {
+    border-bottom: none;
+}
+
+/* Property CTA Section */
+.property-cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.property-cta h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.property-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.property-cta .btn {
+    background: white;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.property-cta .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .property-main-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .property-details,
+    .property-image-container {
+        padding: 0;
+    }
+    
+    .property-header h1 {
+        font-size: 2rem;
+    }
+    
+    .property-hero-image {
+        height: 250px;
+    }
+    
+    .property-section {
+        padding: 20px;
+    }
+    
+    .property-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .pricing-table th,
+    .pricing-table td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+    
+    .property-cta {
+        padding: 30px 20px;
+    }
+    
+    .property-cta h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .property-detail {
+        padding: 40px 0;
+    }
+    
+    .property-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .property-section {
+        margin: 0 -10px 20px;
+        border-radius: 0;
+    }
+    
+    .pricing-table {
+        font-size: 0.8rem;
+    }
+    
+    .pricing-table th,
+    .pricing-table td {
+        padding: 8px 5px;
+    }
+}
+
+/* Gallery Animation Effects */
+.gallery-image.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.gallery-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.gallery-thumbnail:active {
+    transform: scale(0.95);
+}

@@ -158,6 +158,25 @@ app.get('/real-estate', (req, res) => {
     res.render('real-estate', pageData);
 });
 
+// Property Details Routes
+app.get('/properties/sky-elaris', (req, res) => {
+    const pageData = {
+        title: 'Elaris Sky - Premium High-Rise Apartments | All Zone Corporate Services',
+        description: 'Elaris Sky Object 1 - Premium high-rise residential tower with studios and 1 & 2 bedroom apartments. Starting from AED 767,000 with panoramic city views.',
+        currentPage: 'properties'
+    };
+    res.render('properties/sky-elaris', pageData);
+});
+
+app.get('/properties/lb-shastri-nagar', (req, res) => {
+    const pageData = {
+        title: 'LB Shastri Nagar - 2BHK Apartment | All Zone Corporate Services',
+        description: 'LB Shastri Nagar 2BHK apartment with modern amenities and well-connected location. Ready to move property.',
+        currentPage: 'properties'
+    };
+    res.render('properties/lb-shastri-nagar', pageData);
+});
+
 // Business Licensing Routes
 app.get('/trade-license', (req, res) => {
     const pageData = {
@@ -395,6 +414,15 @@ app.get('/pro-services', (req, res) => {
         currentPage: 'pro-services'
     };
     res.render('business-support/pro-services', pageData);
+});
+
+app.get('/corporate-training', (req, res) => {
+    const pageData = {
+        title: 'Corporate Training Programs - AZ Corporate Services',
+        description: 'Expert corporate training in communication, leadership, team collaboration, and professional development. 20+ years of proven expertise.',
+        currentPage: 'corporate-training'
+    };
+    res.render('business-support/corporate-training', pageData);
 });
 
 // Start server
