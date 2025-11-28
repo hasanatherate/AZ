@@ -160,6 +160,13 @@
     outline: none;
 }
 
+/* Make contact form placeholder text white */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
 /* Popup Forms */
 .popup-overlay {
     position: fixed;

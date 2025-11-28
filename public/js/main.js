@@ -573,6 +573,7 @@ class App {
             popupManager,
             new FormValidator(),
             new AgenciesSlider(),
+            new PromotionalSlider(),
             new MobileNavigation(),
             new DropdownMenus(),
             new NavbarScroll(),
@@ -594,4 +595,66 @@ class App {
 
 // Initialize the application
 new App();
+
+// ===== PROMOTIONAL OFFERS SLIDER =====
+function clamp(n, min, max) { return Math.max(min, Math.min(n, max)); }
+
+class PromotionalSlider {
+    constructor() {
+        this.slider = document.querySelector('.offers-slider');
+        this.prevBtn = document.querySelector('.offers-prev');
+        this.nextBtn = document.querySelector('.offers-next');
+        if (this.slider && this.prevBtn && this.nextBtn) {
+            this.init();
+        }
+    }
+
+    init() {
+        // We rely on clientWidth so ensure images have loaded where possible
+        this.bindEvents();
+        this.updateButtonStates();
+        window.addEventListener('resize', debounce(() => this.updateButtonStates(), 200));
+    }
+
+    bindEvents() {
+        this.prevBtn.addEventListener('click', () => this.scrollBy(-1));
+        this.nextBtn.addEventListener('click', () => this.scrollBy(1));
+
+        // Allow swipe/drag on touch devices by tracking pointer
+        let isDown = false, startX = 0, scrollLeft = 0;
+        this.slider.addEventListener('pointerdown', (e) => {
+            isDown = true;
+            startX = e.pageX - this.slider.offsetLeft;
+            scrollLeft = this.slider.scrollLeft;
+            this.slider.setPointerCapture(e.pointerId);
+        });
+
+        this.slider.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            const x = e.pageX - this.slider.offsetLeft;
+            const walk = (startX - x);
+            this.slider.scrollLeft = scrollLeft + walk;
+        });
+
+        this.slider.addEventListener('pointerup', (e) => { isDown = false; this.updateButtonStates(); });
+        this.slider.addEventListener('pointercancel', (e) => { isDown = false; this.updateButtonStates(); });
+
+        this.slider.addEventListener('scroll', debounce(() => this.updateButtonStates(), 100));
+    }
+
+    scrollBy(direction) {
+        // direction: 1 => next, -1 => prev
+        const width = this.slider.clientWidth;
+        const target = this.slider.scrollLeft + direction * width;
+        this.slider.scrollTo({ left: target, behavior: 'smooth' });
+        // update after short delay
+        setTimeout(() => this.updateButtonStates(), 300);
+    }
+
+    updateButtonStates() {
+        const max = this.slider.scrollWidth - this.slider.clientWidth;
+        this.prevBtn.disabled = this.slider.scrollLeft <= 0 + 1;
+        this.nextBtn.disabled = this.slider.scrollLeft >= max - 1;
+    }
+}
 

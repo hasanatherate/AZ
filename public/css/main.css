@@ -346,6 +346,78 @@
     background: rgba(0, 116, 255, 0.05);
 }
 
+/* Promotional Offers Slider */
+.promotional-offers {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.promotional-offers .section-header h2 {
+    color: white;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.offers-slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 30px;
+}
+
+.offers-slider {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    flex: 1;
+}
+
+.offer-item {
+    min-width: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    /* Add vertical padding so image doesn't touch edges (smaller now) */
+    padding: 1rem 0;
+}
+
+.offer-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer-image img {
+    width: 65%;
+    max-width: 640px; /* smaller cap */
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.32);
+}
+
+/* Use existing .slider-btn styles for the arrows; slightly larger */
+.offers-prev, .offers-next {
+    width: 56px;
+    height: 56px;
+}
+
+@media (max-width: 768px) {
+    .promotional-offers { padding: 40px 0; }
+    .offers-prev, .offers-next { width: 44px; height: 44px; }
+    .offer-item { padding: 0.6rem 0; }
+    .offer-image img { width: 85%; max-width: 480px; }
+}
+
 .government-agencies .section-header h2 {
     color: white;
     font-size: 2.5rem;

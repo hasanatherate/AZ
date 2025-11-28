@@ -551,6 +551,118 @@
     margin-bottom: 1.5rem;
 }
 
+/* Freelancer Opportunity Section */
+.freelancer-opportunity {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.opportunity-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.opportunity-header {
+    margin-bottom: 3rem;
+}
+
+.opportunity-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.opportunity-header .subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.opportunity-header .intro {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.opportunity-details {
+    text-align: left;
+}
+
+.opportunity-details > p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.offer-section,
+.candidate-section,
+.contact-section {
+    margin-bottom: 2.5rem;
+}
+
+.offer-section h4,
+.candidate-section h4,
+.contact-section h4 {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.offer-list,
+.candidate-list {
+    list-style: none;
+    padding: 0;
+}
+
+.offer-list li,
+.candidate-list li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.offer-list li:before,
+.candidate-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
+}
+
 /* Service Page Hero Styles */
 .licensing-hero .hero-content {
     display: grid;
@@ -576,7 +688,8 @@
 
 .licensing-hero .hero-image img {
     width: 100%;
-    height: 400px;
+    /* increased to make hero stock images slightly larger on licensing/accounting/tax/business-support pages */
+    height: 520px;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
@@ -613,6 +726,20 @@
 .image-grid img:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments for licensing/business hero images */
+@media (max-width: 1024px) {
+    .licensing-hero .hero-image img {
+        height: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    .licensing-hero .hero-image img,
+    .business-hero .hero-image img {
+        height: 300px;
+    }
 }
 
 /* Free Zone Page Specific Styles */

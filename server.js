@@ -204,6 +204,15 @@ app.get('/properties/godrej-reserve', (req, res) => {
     res.render('properties/godrej-reserve', pageData);
 });
 
+app.get('/properties/independent-house-kalkere', (req, res) => {
+    const pageData = {
+        title: 'Independent House in Kalkere - All Zone Corporate Services',
+        description: 'Independent 5BHK house for sale in Kalkere. 1200 sqft plot, 2800 sqft SBUA, west facing. Price ₹1.25 Cr.',
+        currentPage: 'properties'
+    };
+    res.render('properties/independent-house-kalkere', pageData);
+});
+
 // Business Licensing Routes
 app.get('/trade-license', (req, res) => {
     const pageData = {
