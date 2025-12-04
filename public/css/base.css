@@ -64,6 +64,8 @@ body {
     user-select: auto;
     font-size: 18px;
     padding-top: 140px; /* Add padding for fixed header */
+    /* Reduce font-swap CLS with size adjustment */
+    font-size-adjust: 0.5;
 }
 
 .container {

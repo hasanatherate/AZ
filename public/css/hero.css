@@ -16,6 +16,8 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    /* CSS containment to isolate layout and prevent shifts */
+    contain: layout style;
 }
 
 .hero::before {
@@ -46,6 +48,8 @@
 
 .hero-text {
     text-align: left;
+    /* Optimize for font loading */
+    will-change: contents;
 }
 
 .hero-text h1 {

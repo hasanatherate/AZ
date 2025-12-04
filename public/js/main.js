@@ -125,12 +125,26 @@ class PopupManager {
             return;
         }
         
-        this.popupElement.classList.add('active');
+        // OPTIMIZED: Set display first, then animate to prevent CLS
+        this.popupElement.style.display = 'flex';
+        
+        // Force reflow to ensure display change is applied
+        this.popupElement.offsetHeight;
+        
+        // Then add active class for smooth animation
+        requestAnimationFrame(() => {
+            this.popupElement.classList.add('active');
+        });
     }
 
     hidePopup(userDismissed = false) {
         if (this.popupElement) {
             this.popupElement.classList.remove('active');
+            
+            // Wait for transition to complete before hiding
+            setTimeout(() => {
+                this.popupElement.style.display = 'none';
+            }, 300);
         }
         
         // Don't stop recurring popups when user dismisses
