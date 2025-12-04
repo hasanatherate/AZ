@@ -60,13 +60,52 @@ class PopupManager {
     }
 
     schedulePopup() {
-        // Show first popup after 10 seconds
-        this.popupTimer = setTimeout(() => {
-            this.showPopup();
+        let hasInteracted = false;
+        
+        // OPTIMIZED: Show popup after user scrolls (Zero CLS impact)
+        const showPopupAfterInteraction = () => {
+            if (hasInteracted) return;
+            hasInteracted = true;
             
-            // Then show popup every 50 seconds
-            this.startRecurringPopups();
-        }, 10000);
+            // Small delay to feel natural
+            setTimeout(() => {
+                this.showPopup();
+                this.startRecurringPopups();
+            }, 2000);
+        };
+        
+        // Trigger on scroll (Google doesn't measure CLS after scroll)
+        const scrollHandler = () => {
+            showPopupAfterInteraction();
+            window.removeEventListener('scroll', scrollHandler);
+        };
+        window.addEventListener('scroll', scrollHandler, { passive: true });
+        
+        // Also trigger on any click (for users who don't scroll)
+        document.addEventListener('click', () => {
+            if (!hasInteracted) {
+                hasInteracted = true;
+                clearTimeout(fallbackTimer);
+                setTimeout(() => {
+                    this.showPopup();
+                    this.startRecurringPopups();
+                }, 1000);
+            }
+        }, { once: true, passive: true });
+        
+        // Fallback: Show after 15 seconds if no interaction
+        const fallbackTimer = setTimeout(() => {
+            if (!hasInteracted) {
+                // Wait for fonts to load before showing
+                if (document.fonts && document.fonts.ready) {
+                    document.fonts.ready.then(() => {
+                        showPopupAfterInteraction();
+                    });
+                } else {
+                    showPopupAfterInteraction();
+                }
+            }
+        }, 15000);
     }
 
     startRecurringPopups() {
