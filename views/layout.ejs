@@ -10,28 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://res.cloudinary.com">
-    
-    <!-- Preload LCP hero background image with high priority -->
-    <link rel="preload" as="image" 
-          href="https://res.cloudinary.com/dfcaqxkii/image/upload/f_auto,q_auto,w_1600,c_fill/v1764238120/new_hero_image_ac2yhh.png" 
-          fetchpriority="high">
-    
-    <!-- Preload critical fonts to prevent CLS in popup -->
-    <link rel="preload" as="font" type="font/woff2" 
-          href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" 
-          crossorigin>
-    <link rel="preload" as="font" type="font/woff2" 
-          href="https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" 
-          crossorigin>
     
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/navbar.css">
-    
+   
     <!-- Font Awesome with optimized loading -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts with font-display: optional for zero CLS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=optional" rel="stylesheet">
+    <!-- Google Fonts with font-display: swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include('partials/header') %>

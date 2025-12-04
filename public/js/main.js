@@ -60,52 +60,13 @@ class PopupManager {
     }
 
     schedulePopup() {
-        let hasInteracted = false;
-        
-        // OPTIMIZED: Show popup after user scrolls (Zero CLS impact)
-        const showPopupAfterInteraction = () => {
-            if (hasInteracted) return;
-            hasInteracted = true;
+        // Show first popup after 10 seconds
+        this.popupTimer = setTimeout(() => {
+            this.showPopup();
             
-            // Small delay to feel natural
-            setTimeout(() => {
-                this.showPopup();
-                this.startRecurringPopups();
-            }, 2000);
-        };
-        
-        // Trigger on scroll (Google doesn't measure CLS after scroll)
-        const scrollHandler = () => {
-            showPopupAfterInteraction();
-            window.removeEventListener('scroll', scrollHandler);
-        };
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-        
-        // Also trigger on any click (for users who don't scroll)
-        document.addEventListener('click', () => {
-            if (!hasInteracted) {
-                hasInteracted = true;
-                clearTimeout(fallbackTimer);
-                setTimeout(() => {
-                    this.showPopup();
-                    this.startRecurringPopups();
-                }, 1000);
-            }
-        }, { once: true, passive: true });
-        
-        // Fallback: Show after 15 seconds if no interaction
-        const fallbackTimer = setTimeout(() => {
-            if (!hasInteracted) {
-                // Wait for fonts to load before showing
-                if (document.fonts && document.fonts.ready) {
-                    document.fonts.ready.then(() => {
-                        showPopupAfterInteraction();
-                    });
-                } else {
-                    showPopupAfterInteraction();
-                }
-            }
-        }, 15000);
+            // Then show popup every 50 seconds
+            this.startRecurringPopups();
+        }, 10000);
     }
 
     startRecurringPopups() {
@@ -125,26 +86,12 @@ class PopupManager {
             return;
         }
         
-        // OPTIMIZED: Set display first, then animate to prevent CLS
-        this.popupElement.style.display = 'flex';
-        
-        // Force reflow to ensure display change is applied
-        this.popupElement.offsetHeight;
-        
-        // Then add active class for smooth animation
-        requestAnimationFrame(() => {
-            this.popupElement.classList.add('active');
-        });
+        this.popupElement.classList.add('active');
     }
 
     hidePopup(userDismissed = false) {
         if (this.popupElement) {
             this.popupElement.classList.remove('active');
-            
-            // Wait for transition to complete before hiding
-            setTimeout(() => {
-                this.popupElement.style.display = 'none';
-            }, 300);
         }
         
         // Don't stop recurring popups when user dismisses
@@ -413,15 +360,123 @@ class AgenciesSlider {
     }
 
     updateButtonStates() {
-        // OPTIMIZED: Batch all DOM reads together to prevent forced reflow
-        const scrollLeft = this.slider.scrollLeft;
-        const scrollWidth = this.slider.scrollWidth;
-        const clientWidth = this.slider.clientWidth;
+        const maxScroll = this.slider.scrollWidth - this.slider.clientWidth;
+        this.prevBtn.disabled = this.slider.scrollLeft <= 0;
+        this.nextBtn.disabled = this.slider.scrollLeft >= maxScroll;
+    }
+}
+
+// ===== PROMOTIONAL OFFERS SLIDER =====
+class PromotionalSlider {
+    constructor() {
+        this.slider = document.querySelector('.offers-slider');
+        this.prevBtn = document.querySelector('.offers-prev');
+        this.nextBtn = document.querySelector('.offers-next');
         
-        // Now do the writes
-        const maxScroll = scrollWidth - clientWidth;
-        this.prevBtn.disabled = scrollLeft <= 0;
-        this.nextBtn.disabled = scrollLeft >= maxScroll;
+        if (this.slider && this.prevBtn && this.nextBtn) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.bindEvents();
+        
+        // Wait for images to load before calculating button states
+        this.waitForImagesToLoad().then(() => {
+            this.updateButtonStates();
+        });
+        
+        // Update button states on resize
+        window.addEventListener('resize', debounce(() => {
+            this.updateButtonStates();
+        }, 200));
+    }
+
+    waitForImagesToLoad() {
+        const images = this.slider.querySelectorAll('img');
+        const imagePromises = Array.from(images).map(img => {
+            if (img.complete) {
+                return Promise.resolve();
+            }
+            return new Promise((resolve, reject) => {
+                img.addEventListener('load', resolve);
+                img.addEventListener('error', resolve); // Resolve even on error to not block
+                // Timeout fallback
+                setTimeout(resolve, 3000);
+            });
+        });
+        
+        return Promise.all(imagePromises);
+    }
+
+    bindEvents() {
+        this.prevBtn.addEventListener('click', () => this.scrollBy(-1));
+        this.nextBtn.addEventListener('click', () => this.scrollBy(1));
+
+        // Allow swipe/drag on touch devices
+        let isDown = false, startX = 0, scrollLeft = 0;
+        
+        this.slider.addEventListener('pointerdown', (e) => {
+            isDown = true;
+            startX = e.pageX - this.slider.offsetLeft;
+            scrollLeft = this.slider.scrollLeft;
+            this.slider.setPointerCapture(e.pointerId);
+        });
+
+        this.slider.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            const x = e.pageX - this.slider.offsetLeft;
+            const walk = (startX - x);
+            this.slider.scrollLeft = scrollLeft + walk;
+        });
+
+        this.slider.addEventListener('pointerup', (e) => {
+            isDown = false;
+            this.updateButtonStates();
+        });
+        
+        this.slider.addEventListener('pointercancel', (e) => {
+            isDown = false;
+            this.updateButtonStates();
+        });
+
+        this.slider.addEventListener('scroll', debounce(() => {
+            this.updateButtonStates();
+        }, 100));
+    }
+
+    scrollBy(direction) {
+        // direction: 1 => next, -1 => prev
+        const width = this.slider.clientWidth;
+        const currentScroll = this.slider.scrollLeft;
+        const target = currentScroll + (direction * width);
+        
+        // Use smooth scrolling
+        this.slider.scrollTo({ 
+            left: target, 
+            behavior: 'smooth' 
+        });
+        
+        // Update button states after animation completes
+        setTimeout(() => this.updateButtonStates(), 400);
+    }
+
+    updateButtonStates() {
+        // Force a reflow to ensure accurate measurements
+        this.slider.offsetWidth;
+        
+        const maxScroll = this.slider.scrollWidth - this.slider.clientWidth;
+        const currentScroll = this.slider.scrollLeft;
+        
+        // Enable/disable buttons based on scroll position
+        this.prevBtn.disabled = currentScroll <= 2;
+        this.nextBtn.disabled = currentScroll >= maxScroll - 2;
+        
+        // Add visual feedback
+        this.prevBtn.style.opacity = this.prevBtn.disabled ? '0.3' : '1';
+        this.nextBtn.style.opacity = this.nextBtn.disabled ? '0.3' : '1';
+        this.prevBtn.style.cursor = this.prevBtn.disabled ? 'not-allowed' : 'pointer';
+        this.nextBtn.style.cursor = this.nextBtn.disabled ? 'not-allowed' : 'pointer';
     }
 }
 
@@ -654,77 +709,3 @@ class App {
 
 // Initialize the application
 new App();
-
-// ===== PROMOTIONAL OFFERS SLIDER =====
-function clamp(n, min, max) { return Math.max(min, Math.min(n, max)); }
-
-class PromotionalSlider {
-    constructor() {
-        this.slider = document.querySelector('.offers-slider');
-        this.prevBtn = document.querySelector('.offers-prev');
-        this.nextBtn = document.querySelector('.offers-next');
-        if (this.slider && this.prevBtn && this.nextBtn) {
-            this.init();
-        }
-    }
-
-    init() {
-        // We rely on clientWidth so ensure images have loaded where possible
-        this.bindEvents();
-        this.updateButtonStates();
-        window.addEventListener('resize', debounce(() => this.updateButtonStates(), 200));
-    }
-
-    bindEvents() {
-        this.prevBtn.addEventListener('click', () => this.scrollBy(-1));
-        this.nextBtn.addEventListener('click', () => this.scrollBy(1));
-
-        // Allow swipe/drag on touch devices by tracking pointer
-        let isDown = false, startX = 0, scrollLeft = 0;
-        this.slider.addEventListener('pointerdown', (e) => {
-            isDown = true;
-            startX = e.pageX - this.slider.offsetLeft;
-            scrollLeft = this.slider.scrollLeft;
-            this.slider.setPointerCapture(e.pointerId);
-        });
-
-        this.slider.addEventListener('pointermove', (e) => {
-            if (!isDown) return;
-            const x = e.pageX - this.slider.offsetLeft;
-            const walk = (startX - x);
-            this.slider.scrollLeft = scrollLeft + walk;
-        });
-
-        this.slider.addEventListener('pointerup', (e) => { isDown = false; this.updateButtonStates(); });
-        this.slider.addEventListener('pointercancel', (e) => { isDown = false; this.updateButtonStates(); });
-
-        this.slider.addEventListener('scroll', debounce(() => this.updateButtonStates(), 100));
-    }
-
-    scrollBy(direction) {
-        // direction: 1 => next, -1 => prev
-        // OPTIMIZED: Batch all reads before any writes to prevent forced reflow
-        const width = this.slider.clientWidth;
-        const currentScroll = this.slider.scrollLeft;
-        
-        // Now do the write
-        const target = currentScroll + direction * width;
-        this.slider.scrollTo({ left: target, behavior: 'smooth' });
-        
-        // update after short delay
-        setTimeout(() => this.updateButtonStates(), 300);
-    }
-
-    updateButtonStates() {
-        // OPTIMIZED: Batch all DOM reads together to prevent forced reflow
-        const scrollLeft = this.slider.scrollLeft;
-        const scrollWidth = this.slider.scrollWidth;
-        const clientWidth = this.slider.clientWidth;
-        
-        // Now do the writes
-        const max = scrollWidth - clientWidth;
-        this.prevBtn.disabled = scrollLeft <= 1;
-        this.nextBtn.disabled = scrollLeft >= max - 1;
-    }
-}
-

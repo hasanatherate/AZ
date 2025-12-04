@@ -2,21 +2,17 @@
    BASE STYLES & VARIABLES
    ======================================== */
 
-/* Font Awesome Font Display Optimization - Override CDN fonts with swap for better FCP */
+/* Font Display Optimization - Ensure Font Awesome uses font-display: swap */
 @font-face {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2");
+    font-family: 'Font Awesome 6 Brands';
+    font-display: swap;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: "Font Awesome 5 Brands";
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-brands-400.woff2") format("woff2");
+    font-family: 'Font Awesome 6 Free';
+    font-display: swap;
+    src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2') format('woff2');
 }
 
 :root {
@@ -34,9 +30,6 @@
     --border-radius: 8px;
     --box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     --transition: all 0.3s ease;
-    
-    /* Font fallback to reduce CLS during font loading */
-    --poppins-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -50,7 +43,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', var(--poppins-fallback);
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #D4AF37;
     overflow-x: hidden;
@@ -64,8 +57,6 @@ body {
     user-select: auto;
     font-size: 18px;
     padding-top: 140px; /* Add padding for fixed header */
-    /* Reduce font-swap CLS with size adjustment */
-    font-size-adjust: 0.5;
 }
 
 .container {

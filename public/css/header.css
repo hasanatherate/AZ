@@ -75,9 +75,7 @@
 
 .flag {
     width: 20px;
-    height: 14px; /* Fixed height to prevent CLS */
-    display: inline-block;
-    vertical-align: middle;
+    height: auto;
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
@@ -373,23 +371,14 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
     min-width: min(600px, 90vw);
-    /* Use visibility instead of display to prevent CLS */
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .nav-dropdown:hover .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
+    display: grid;
 }
 
 .dropdown-section h4 {
