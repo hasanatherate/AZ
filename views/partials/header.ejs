@@ -71,6 +71,10 @@
         .logo-text h1 {font-size: 1.9rem;font-weight: 800;color: #D4AF37;margin: 0 0 0.3rem 0;line-height: 1.1;}
         .logo-text span {color: #FFD700;font-weight: 600;}
         .main-nav {display: flex;align-items: center;gap: 1.5rem;padding: 1rem 0;border-top: 1px solid rgba(255,255,255,0.2);flex-wrap: wrap;}
+        /* CRITICAL: Hide dropdowns initially to prevent FOUC */
+        .dropdown-menu {display: none !important;}
+        .nav-dropdown:hover .dropdown-menu {display: grid !important;}
+        .nav-dropdown {position: relative;}
     </style>
     
     <script>function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);i.onload=function(){i.media=n||"all"};return i}</script>
