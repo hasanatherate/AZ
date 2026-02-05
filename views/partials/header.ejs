@@ -73,7 +73,9 @@
         .main-nav {display: flex;align-items: center;gap: 1.5rem;padding: 1rem 0;border-top: 1px solid rgba(255,255,255,0.2);flex-wrap: wrap;}
         /* CRITICAL: Hide dropdowns initially to prevent FOUC */
         .nav-dropdown {position: relative;}
-        .dropdown-menu {position: absolute;top: 100%;left: 0;display: none;opacity: 0;visibility: hidden;}
+        .dropdown-menu {position: absolute;top: 100%;left: 0;opacity: 0;visibility: hidden;pointer-events: none;}
+        .dropdown-list {list-style: none;padding: 0;margin: 0;}
+        .dropdown-section {display: block;}
     </style>
     
     <script>function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);i.onload=function(){i.media=n||"all"};return i}</script>

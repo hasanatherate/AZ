@@ -385,6 +385,11 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-section {
+    display: block;
 }
 
 .dropdown-section h4 {
@@ -392,6 +397,29 @@
     font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 600;
+}
+
+.dropdown-section h5 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-list li {
+    margin: 0;
+    padding: 0;
+}
+
+.tax-subsection {
+    margin-top: 1rem;
 }
 
 .mega-card {
