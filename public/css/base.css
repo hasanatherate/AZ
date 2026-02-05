@@ -2,16 +2,20 @@
    BASE STYLES & VARIABLES
    ======================================== */
 
-/* Font Display Optimization - Ensure Font Awesome uses font-display: swap */
+/* Font Display Optimization - Ensure fonts use font-display: swap to prevent FOUC */
 @font-face {
     font-family: 'Font Awesome 6 Brands';
     font-display: swap;
+    font-weight: 400;
+    font-style: normal;
     src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Font Awesome 6 Free';
     font-display: swap;
+    font-weight: 900;
+    font-style: normal;
     src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2') format('woff2');
 }
 
@@ -56,7 +60,14 @@ body {
     -webkit-user-select: auto;
     user-select: auto;
     font-size: 18px;
-    padding-top: 140px; /* Add padding for fixed header */
+    padding-top: 140px;
+    /* FOUC prevention - body hidden until loaded class added */
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 .container {

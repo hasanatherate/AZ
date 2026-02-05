@@ -190,6 +190,16 @@
 </div>
 <% } %>
 
-<!-- JavaScript -->
-<script src="/js/main.js"></script>
+<!-- JavaScript - deferred for better performance -->
+<script src="/js/main.js" defer></script>
 
+<!-- Add loaded class to body when page is ready to prevent FOUC -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('loaded');
+});
+// Fallback for older browsers
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    document.body.classList.add('loaded');
+}
+</script>
