@@ -79,6 +79,19 @@
 }
 
 /* Cards */
+.service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.service-link:hover,
+.service-link:visited,
+.service-link:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 .service-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
