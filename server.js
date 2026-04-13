@@ -213,6 +213,42 @@ app.get('/properties/independent-house-kalkere', (req, res) => {
     res.render('properties/independent-house-kalkere', pageData);
 });
 
+app.get('/properties/radisson-blu-residences-rak-central-financial-district', (req, res) => {
+    const pageData = {
+        title: 'Radisson Blu Residences RAK Central Financial District | All Zone Corporate Services',
+        description: 'Radisson Blu Residences in RAK Central Financial District - spacious three-bedroom apartment, 1,374 sq.ft., priced at AED 2,885,000 with 50/50 payment plan.',
+        currentPage: 'properties'
+    };
+    res.render('properties/radisson-blu-residences-rak-central-financial-district', pageData);
+});
+
+app.get('/properties/safa-gate', (req, res) => {
+    const pageData = {
+        title: 'Safa Gate - Safa Park SZR Investment Opportunity | All Zone Corporate Services',
+        description: 'Safa Gate near Safa Park and SZR. 1BR and 2BR options, 100% DLD waiver, 50/50 payment plan, handover October 2029.',
+        currentPage: 'properties'
+    };
+    res.render('properties/safa-gate', pageData);
+});
+
+app.get('/properties/sobha-sanctuary', (req, res) => {
+    const pageData = {
+        title: 'Sobha Sanctuary - Luxury Nature-Inspired Villas | All Zone Corporate Services',
+        description: 'Sobha Sanctuary offers luxury 4, 5, and 6 bedroom residences with nature-inspired design, 60/40 payment plan, and August 2029 completion.',
+        currentPage: 'properties'
+    };
+    res.render('properties/sobha-sanctuary', pageData);
+});
+
+app.get('/properties/masaar3-ph5-layan', (req, res) => {
+    const pageData = {
+        title: 'MASAAR3 PH5 LAYAN - Phase 5 Launch | All Zone Corporate Services',
+        description: 'MASAAR3 PH5 LAYAN with 40/60 payment plan, 2029 handover, and exclusive 4% SLD waiver for launch-day bookings.',
+        currentPage: 'properties'
+    };
+    res.render('properties/masaar3-ph5-layan', pageData);
+});
+
 // Business Licensing Routes
 app.get('/trade-license', (req, res) => {
     const pageData = {

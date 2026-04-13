@@ -1,0 +1,120 @@
+<%- include('../partials/header') %>
+
+<!-- Property Detail Section -->
+<section class="property-detail">
+    <div class="container">
+        <!-- Property Header -->
+        <div class="property-header">
+            <h1>Radisson Blu Residences RAK Central Financial District</h1>
+        </div>
+
+        <!-- Main Property Section -->
+        <div class="property-main-section">
+            <!-- Left Side - Property Media -->
+            <div class="property-image-container">
+                <div class="property-image-gallery">
+                    <div class="gallery-main">
+                        <video class="gallery-image gallery-video active" controls playsinline preload="metadata">
+                            <source src="https://res.cloudinary.com/dfcaqxkii/video/upload/q_auto/f_auto/v1776096300/WhatsApp_Video_2026-04-13_at_19.55.23_beq8pl.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="https://res.cloudinary.com/dfcaqxkii/image/upload/q_auto/f_auto/v1776096250/WhatsApp_Image_2026-04-13_at_19.50.55_r83epb.jpg" alt="Radisson Blu Residences RAK Central Financial District" class="gallery-image">
+
+                        <button class="gallery-nav prev" onclick="changeImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next" onclick="changeImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <div class="gallery-counter">
+                            <span id="current-image">1</span> / <span id="total-images">2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Property Details -->
+            <div class="property-details">
+                <div class="property-section">
+                    <h2>Overview</h2>
+                    <p>Spacious three-bedroom residence at Radisson Blu Residences in RAK Central Financial District, offering a rare investment opportunity with strong upside, institutional-grade positioning, and below-market pricing.</p>
+
+                    <h2>Key Investment Terms</h2>
+                    <ul class="highlights-list">
+                        <li>Spacious three bedrooms</li>
+                        <li>1,374 sq.ft. layout</li>
+                        <li>Price: AED 3,292,538 → AED 2,885,000</li>
+                        <li>4% Ras Al Khaimah Land Department fees paid</li>
+                        <li>1 year free service charge</li>
+                        <li>Q4 2029 handover</li>
+                        <li>50/50 payment plan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Property Information -->
+        <div class="property-content">
+            <section class="property-section">
+                <h2>Location Advantage</h2>
+                <ul class="highlights-list">
+                    <li>6 minutes from the casino</li>
+                    <li>4 minutes from public beaches</li>
+                </ul>
+            </section>
+
+            <section class="property-section">
+                <h2>Investment Opportunity</h2>
+                <ul class="highlights-list">
+                    <li>Rare asset with high demand</li>
+                    <li>Below market price</li>
+                    <li>Strong upside potential</li>
+                    <li>Fast capital appreciation</li>
+                    <li>Institutional-grade opportunity</li>
+                </ul>
+            </section>
+
+            <!-- CTA -->
+            <section class="property-cta">
+                <h3>Interested in Radisson Blu Residences?</h3>
+                <p>Contact our real estate consultants for more information and media links.</p>
+                <a href="#contact" class="btn btn-primary popup-trigger">Get More Info</a>
+            </section>
+        </div>
+    </div>
+</section>
+
+<script>
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.gallery-image');
+const totalImages = images.length;
+
+function showImage(index) {
+    images.forEach(media => {
+        media.classList.remove('active');
+        if (media.tagName === 'VIDEO') {
+            media.pause();
+        }
+    });
+
+    images[index].classList.add('active');
+    document.getElementById('current-image').textContent = index + 1;
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+
+    if (currentImageIndex >= totalImages) {
+        currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+        currentImageIndex = totalImages - 1;
+    }
+
+    showImage(currentImageIndex);
+}
+
+document.getElementById('total-images').textContent = totalImages;
+</script>
+
+<%- include('../partials/footer') %>
