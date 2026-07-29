@@ -197,11 +197,20 @@ app.get('/properties/cooke-town-plot', (req, res) => {
 
 app.get('/properties/godrej-reserve', (req, res) => {
     const pageData = {
-        title: 'Godrej Reserve - Devanahalli Plots | All Zone Corporate Services',
-        description: 'Godrej Reserve - 100 acre property with 900 plots in Devanahalli STRR. 10 kms from airport. Forest-themed plotted development.',
+        title: 'Godrej Reserve - Forest-Themed Plotted Development | All Zone Corporate Services',
+        description: 'Godrej Reserve is a 92.7-acre forest-themed plotted development in Devanahalli with about 950 plots, landscaped greens, clubhouses and planned infrastructure.',
         currentPage: 'properties'
     };
     res.render('properties/godrej-reserve', pageData);
+});
+
+app.get('/properties/sakleshpur-coffee-plantation-homestay', (req, res) => {
+    const pageData = {
+        title: '5-Acre Coffee Plantation Homestay for Sale in Sakleshpur | All Zone Corporate Services',
+        description: 'Operational 5-acre homestay and coffee plantation in Hadhya Village, Sakleshpur, with furnished guest rooms, utilities, plantation and expansion land.',
+        currentPage: 'properties'
+    };
+    res.render('properties/sakleshpur-coffee-plantation-homestay', pageData);
 });
 
 app.get('/properties/independent-house-kalkere', (req, res) => {
