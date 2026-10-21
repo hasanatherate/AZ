@@ -506,10 +506,9 @@
 }
 
 .marco-info {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 4rem;
-    align-items: flex-start;
+    display: block;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .marco-image img {
@@ -518,6 +517,11 @@
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.story-text {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .story-text h2 {
